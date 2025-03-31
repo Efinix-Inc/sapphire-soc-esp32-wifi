@@ -13,3 +13,8 @@ EfxSapphireHpSoc_slb/
 **/output/
 **/build/
 build/*
+**/.metadata/
+**/.settings/
+*.cproject
+*.project
+
