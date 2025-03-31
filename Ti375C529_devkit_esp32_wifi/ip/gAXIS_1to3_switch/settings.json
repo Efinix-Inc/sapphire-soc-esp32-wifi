@@ -1,0 +1,95 @@
+{
+    "args": [
+        "-o",
+        "gAXIS_1to3_switch",
+        "--base_path",
+        "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "axi_infra",
+            "name": "efx_axi_interconnect",
+            "version": "5.3"
+        }
+    ],
+    "conf": {
+        "ARB_MODE": "\"ROUND_ROBIN_1\"",
+        "S_PORTS": "1",
+        "TABLE0_AXI_S0__MIN": "32'd0",
+        "TABLE0_AXI_S1__MIN": "32'd16777216",
+        "TABLE0_AXI_S2__MIN": "32'd17825792",
+        "TABLE0_AXI_S3__MIN": "32'd286261248",
+        "TABLE0_AXI_S4__MIN": "32'd536870912",
+        "TABLE0_AXI_S5__MIN": "32'd805306368",
+        "TABLE0_AXI_S6__MIN": "32'd1073741824",
+        "TABLE0_AXI_S7__MIN": "32'd1090519040",
+        "TABLE0_AXI_S0__MAX": "32'd24",
+        "TABLE0_AXI_S1__MAX": "32'd16",
+        "TABLE0_AXI_S2__MAX": "32'd16",
+        "TABLE0_AXI_S3__MAX": "32'd20",
+        "TABLE0_AXI_S4__MAX": "32'd28",
+        "TABLE0_AXI_S5__MAX": "32'd28",
+        "TABLE0_AXI_S6__MAX": "32'd24",
+        "TABLE0_AXI_S7__MAX": "32'd20",
+        "DATA_WIDTH": "32",
+        "ADDR_WIDTH": "32",
+        "M_PORTS": "3",
+        "ID_WIDTH": "8",
+        "USER_WIDTH": "3",
+        "PROTOCOL": "\"AXI4\""
+    },
+    "output": {
+        "external_script_generator": [],
+        "external_source_source": [
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/gAXIS_1to3_switch_tmpl.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/gAXIS_1to3_switch.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/gAXIS_1to3_switch_define.vh",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/gAXIS_1to3_switch_tmpl.vhd"
+        ],
+        "external_example_example": [
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/axi_interconnect_ed.xml",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/constraints.sdc",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/axi_interconnect_ed.peri.xml",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/efx_crc32.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/efx_custom_master_model.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/efx_custom_slave_model.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/top.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/efx_fifo_top.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/axi_interconnect.vh",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/gAXIS_1to3_switch.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Ti60F225_devkit/gAXIS_1to3_switch_define.vh"
+        ],
+        "external_testbench_synopsys": [
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/synopsys/gAXIS_1to3_switch.v"
+        ],
+        "external_testbench_modelsim": [
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/modelsim/gAXIS_1to3_switch.v"
+        ],
+        "external_testbench_ncsim": [
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/ncsim/gAXIS_1to3_switch.v"
+        ],
+        "external_testbench_aldec": [
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/aldec/gAXIS_1to3_switch.v"
+        ],
+        "external_testbench_testbench": [
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/modelsim.do",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/modelsim.sh",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/xrun.sh",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/axi_interconnect.vh",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/tb.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/top.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/efx_custom_slave_model.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/efx_crc32.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/efx_custom_master_model.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/efx_fifo_top.ncsim.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/efx_fifo_top.vcs.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/flist_ncsim",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/flist_modelsim",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/efx_fifo_top.modelsim.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/gAXIS_1to3_switch.v",
+            "/home/kmlau/work/efx_IP/efx_hard_soc/fpga/Ti375C529_devkit/ip/gAXIS_1to3_switch/Testbench/gAXIS_1to3_switch_define.vh"
+        ]
+    },
+    "sw_version": "2024.2.274",
+    "generated_date": "2024-10-17T01:51:11.806165+00:00"
+}

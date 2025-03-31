@@ -1,0 +1,93 @@
+14:40:37 **** Clean-only build of configuration Default for project lwipIperfServer ****
+make clean 
+14:40:39 **** Build of configuration Default for project lwipIperfServer ****
+make all 
+CC src/main.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/lwiperf.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/sockets.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/api_msg.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/err.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/if_api.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/netbuf.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/tcpip.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/netifapi.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/api_lib.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/api/netdb.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/bridgeif.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/lowpan6_common.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/lowpan6_ble.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/lowpan6.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/zepif.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/bridgeif_fdb.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ethernet.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/fsm.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/upap.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/demand.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/eui64.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/lcp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/ipcp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/pppos.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/mppe.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/multilink.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/pppcrypt.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/pppoe.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/utils.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/auth.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/chap-new.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/ccp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/ipv6cp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/vj.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/chap-md5.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/ecp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/ppp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/chap_ms.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/pppapi.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/magic.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/pppol2tp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/eap.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/polarssl/arc4.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/polarssl/md5.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/polarssl/md4.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/polarssl/sha1.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/netif/ppp/polarssl/des.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/tcp_out.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/udp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/altcp_tcp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/def.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/altcp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/stats.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/netif.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/pbuf.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/tcp_in.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/raw.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ip.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/dns.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/altcp_alloc.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/timeouts.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/tcp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/sys.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/memp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/init.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/inet_chksum.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/mem.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/icmp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/autoip.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/ip4.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/igmp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/ip4_addr.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/etharp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/dhcp.c
+CC ../../../../bsp/efinix/EfxSapphireSoc/app/lwip/core/ipv4/ip4_frag.c
+CC src/espdrv/ethernetif_esp.c
+CC src/espdrv/esp32_spi_hd.c
+CC ../../common/start.S
+CC ../../common/trap.S
+LD lwipIperfServer
+Memory region         Used Size  Region Size  %age Used
+             ram:     1164128 B      2044 KB     55.62%
+14:41:12 **** Incremental Build of configuration Default for project lwipIperfServer ****
+make all 
+make: Nothing to be done for 'all'.
+14:41:30 **** Incremental Build of configuration Default for project lwipIperfServer ****
+make all 
+make: Nothing to be done for 'all'.
