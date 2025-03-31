@@ -1,4 +1,4 @@
-# Wi-Fi Demo Solution
+# Sapphire SoC ESP32 Wi-Fi
 
 ## Overview
 This project demonstrates a Wi-Fi connectivity solution using the Efinix Titanium Ti375C529 Development Kit interfaced with the ESP32-S3-DevKitM-1. The solution enables wireless connectivity for FPGA-based applications through the powerful ESP32-S3 Wi-Fi module.
@@ -31,13 +31,27 @@ sapphire-soc-esp32-wifi/
 ```
 
 ## Design Architecture
-- FPGA will access MAC layer data in ESP32 via SPI buses
-- When ESP32 received FPGA MAC data, it will MAC information to the ESP32 Wi-Fi baseband, then it will send out the data packet
-- When ESP32 received the WO-FI baseband data, it will decode them and notify the FPGA application, finally it will perform DMA R/W via SPI buses
+- FPGA will access MAC layer data in ESP32 via SPI buses.
+- When ESP32 received FPGA MAC data, it will register the MAC information to the ESP32 Wi-Fi baseband, then it will send out the data packet.
+- When ESP32 received the Wi-Fi baseband data, it will decode them and notify the FPGA application, finally it will perform DMA R/W via SPI buses.
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/design-architecture.PNG?raw=true)
 
+## RTL Architecture
+- SPI DMA IP connects to `APB1` of High Performance Sapphire SoC.
+- The `aximm` port of the SPI DMA IP, must be connected to `io_ddrMaster` port, to enable high performance access.
+- The SPI port of SPI DMA IP is connected to ESP32 dev kit via jumper wires.
+- The `Data Ready` signal of ESP32 dev kit is connected to `userInterruptJ` port.
+- ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/rtl-architecture.PNG?raw=true)
+
+## Resource Utilization
+
+| Module                   | FFs | SRLs | ADDs | LUTs | COMB4s | RAMs | DSP/MULTs |
+|--------------------------|-----|------|------|------|--------|------|-----------|
+| APB3 SPI DMA IP          | 718 | 0    | 184  | 870  | 0      | 2    | 0         |
+
+
 ## Hardware Setup
-1. Connect the ESP32-S3-DevKitM-1 to the Efinix Titanium board using the following pins:
+1. Connect the ESP32-S3-DevKitM-1 to the Efinix Ti375C529 board using the following pins:
 
 | Efinix Ti375C529 Pin | PMOD_A Pin           | ESP32-S3 Pin                            | Function    |
 |----------------------|----------------------|-----------------------------------------|-------------|
@@ -57,19 +71,19 @@ sapphire-soc-esp32-wifi/
 ## Software Setup
 1. In this demo, we will use the built-in Windows `Mobile hotspot`.
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/mobile-hotspot.png?raw=true)
-3. Edit the Hotspot setting
+3. Edit the Mobile hotspot setting.
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/mobile-hotspot-setting.png?raw=true)
-4. Turn on the Hotspot
+4. Turn on the Mobile hotspot.
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/mobile-hotspot-on.png?raw=true)
-5. Edit the connection
+5. Edit the Network Connection.
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/network-connections.png?raw=true)
-6. Edit the ipv4 properties
+6. Edit the TCP/IPv4 properties
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/ipv4-properties.png?raw=true)
 
 ## Building, Flashing and Running
 
 ### ESP32-S3
-1. Copy `esp32\wifi_bridge` to `\frameworks\esp-idf-v5.4\examples\peripherals\spi_slave_hd\`
+1. Copy folder `sapphire-soc-esp32-wifi\esp32\wifi_bridge` to `C:\Espressif\frameworks\esp-idf-v5.4\examples\peripherals\spi_slave_hd\`
 2. Launch `ESP-IDF 5.4 CMD`
 ```
 idf.py set-target esp32s3
@@ -79,7 +93,7 @@ idf.py build flash monitor
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/esp32-ready.PNG?raw=true)
 
 ### FPGA
-1. Open the Efinity RISC-V IDE and import the project from the `Ti375C529_devkit_esp32_wifi/` directory
+1. Open the Efinity RISC-V IDE and import the project from the `sapphire-soc-esp32-wifi\Ti375C529_devkit_esp32_wifi\` directory
 3. Run synthesis, place and route
 4. Program the FPGA using Efinity Programmer
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/efinity-programmer.PNG?raw=true)
@@ -92,7 +106,7 @@ idf.py build flash monitor
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/riscv-ready.PNG?raw=true)
 4. If everyhing is okay, you should see something like this at ESP-IDF CMD prompt:
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/wifi-connected.PNG?raw=true)
-5. If you see the following output on ESP-IDF CMD prompt, the connection is failed.
+5. If you see the following output on ESP-IDF CMD prompt, the connection is fail.
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/wifi-disconnected.PNG?raw=true)
 6. If the connection is failed, stop open OCD and repeat step 2
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/stop-openocd.png?raw=true)
@@ -113,19 +127,34 @@ iperf.exe -c 192.168.31.55 -i 1
 
 
 ## Customization
-Edit esp32/main/wifi_config.h to change default Wi-Fi settings
-Modify fpga/rtl/command_processor.sv to implement custom commands
-Add new features to the web interface in esp32/main/http_server.c
+User can customize the setting of SPI and Wi-Fi in `esp32_spi_hd.h`
+- ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/riscv-customize.png?raw=true)
+
+- SPI configurations:
+
+| Parameter     | Default Value        | Description                                              |
+|---------------|----------------------|----------------------------------------------------------|
+| SPI           | IO_APB_SLAVE_1_INPUT | The APB3 ID the IP connected to                          |
+| SPI_CS        | 0                    | SPI chip select                                          |
+| SPI_CLOCK_DIV | 3                    | SPI SCLK = (IP clock / SPI_CLOCK_DIV)                    |
+| ESP_SPI_MODE  | 2                    | 0: full duplex, 1: dual half-duplex, 2: quad half-duplex |
+| ESP_DMA       | 1                    | 0: disable DMA, 1: enable DMA                            |
+
+- Wi-Fi configurations:
+
+| Parameter | Default Value      | Description                    |
+|-----------|--------------------|--------------------------------|
+| WIFI_MODE | 0                  | 0: STA, 1:AP                   |
+| WIFI_SSID | "hello"            | Wi-Fi name                     |
+| WIFI_PASS | "12345678"         | Wi-Fi password                 |
+| WIFI_MAC  | 0x0011223344455ULL | MAC address: 00:11:22:33:44:55 |
 
 ## Troubleshooting
-ESP32 not connecting: Check Wi-Fi credentials in the configuration
-FPGA not responding: Verify pin connections and power supply
-Communication errors: Check baud rate and SPI settings
-Low performance: Adjust buffer sizes and clock frequencies
-
-## Performance Metrics
-Wi-Fi Throughput: Up to 20 Mbps (typical)
-Latency: 5-10 ms (typical)
+- Ping not working:
+  - Make sure RISC-V firmware and Mobile hotspot are in the same subnet
+  - Rerun RISC-V firmware until you see there is no `esp_wifi_bridge: Wi-Fi STA got a station disconnected` at ESP-IDF CMD prompt
+- iPerf throughput very low (kbits/sec) or a lot of packet drops:
+  - Make sure to use the GND pin at the same column with 3.3V on ESP32 dev kit
 
 ## Acknowledgments
 Contributors to open-source libraries used in this project
