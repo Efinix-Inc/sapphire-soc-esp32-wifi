@@ -86,6 +86,7 @@ sapphire-soc-esp32-wifi/
 1. Copy folder `sapphire-soc-esp32-wifi\esp32\wifi_bridge` to `C:\Espressif\frameworks\esp-idf-v5.4\examples\peripherals\spi_slave_hd\`
 2. Launch `ESP-IDF 5.4 CMD`
 ```
+cd C:\Espressif\frameworks\esp-idf-v5.4\examples\peripherals\spi_slave_hd\wifi_bridge
 idf.py set-target esp32s3
 idf.py build flash monitor
 ```
