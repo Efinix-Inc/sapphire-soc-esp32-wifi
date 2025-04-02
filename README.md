@@ -149,6 +149,21 @@ User can customize the setting of SPI and Wi-Fi in `esp32_spi_hd.h`
 | WIFI_PASS | "12345678"         | Wi-Fi password                 |
 | WIFI_MAC  | 0x0011223344455ULL | MAC address: 00:11:22:33:44:55 |
 
+## Tuning
+### lwIP
+- User can increase the following highlighted values, to enable the stack processes more TCP data at one time.
+    - The file path is at `embedded_sw\efx_hard_soc\bsp\efinix\EfxSapphireSoc\app\lwip\user\arch\lwipopts.h`
+- ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/lwip-setting.png?raw=true)
+ 
+### ESP32 Low Power Mode
+- In this demo, the low power mode is disabled. If needed, the user can enable it in `app_main.c`
+    - Some possible values are `WIFI_PS_MIN_MODEM` and `WIFI_PS_MAX_MODEM`
+    - Please refer the details in ESP32 manual
+- ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/esp32-setting.png?raw=true)
+ 
+### SPI Frequency
+- If the user encounters unstable connection or frequent TCP retransmission, he can try to increase the `SPI_CLOCK_DIV` to reduce the SPI working frequency
+
 ## Troubleshooting
 - Ping not working:
   - Make sure RISC-V firmware and Mobile hotspot are in the same subnet
