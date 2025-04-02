@@ -1,7 +1,6 @@
 **/outflow/
 *.lock
 Ti375C529_devkit_esp32_wifi/work_pnr/Ti375C529_devkit.lbf
-EfxSapphireHpSoc_slb/
 **/outflow/
 **/work_pnr/
 **work_syn/
