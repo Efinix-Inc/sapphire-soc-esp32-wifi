@@ -27,6 +27,7 @@ sapphire-soc-esp32-wifi/
 ├── esp32/                              # ESP32-S3 firmware
 │   └── wifi_bridge/                    # Main application
 ├── iperf/                              # iPerf2 application
+├── prebuilt/                           # Prebuilt firmware
 └── README.md                           # This file
 ```
 
@@ -80,6 +81,20 @@ sapphire-soc-esp32-wifi/
 6. Edit the TCP/IPv4 properties
 - ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/ipv4-properties.png?raw=true)
 
+## Using Prebuilt Firmware
+- To test the project quickly, some prebuilt firmware are provided in `prebuild` folder.
+  - Ti375C529_devkit.bit (FPGA bitstream for JTAG programming)
+  - Ti375C529_devkit.hex (FPGA bitstream in hex format used when creating bootable SPI firmware)
+  - bootloader.hex (bootloader used by High Performance Sapphire SoC to retrieve and boot RISC-V firmware from SPI flash)
+  - lwipIperfServer.bin (RISC-V binary)
+  - ti375c529_esp32_wifi.hex (Complete firmware created using FPGA hex and RISC-V bin)
+- Flash `ti375c529_esp32_wifi.hex` using Efinity Programmer as following:
+- ![alt text](https://github.com/Efinix-Inc/sapphire-soc-esp32-wifi/blob/main/doc/flash-prebuilt.png?raw=true)
+- Set up Mobile hotspot
+- Set up ESP32-S3 as written in the next section.
+- Power cycle the Ti375C529 dev kit. You should see the MAC address get printed on ESP-IDF command prompt.
+- If there is a `disconnected` string, press `SW1` of Ti375C529 dev kit until you see the MAC address get printed.
+ 
 ## Building, Flashing and Running
 
 ### ESP32-S3
